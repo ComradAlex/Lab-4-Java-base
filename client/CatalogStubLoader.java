@@ -1,4 +1,4 @@
-package ru.itmo.client;
+package ru.billing.client;
 
 import ru.billing.stockList.Category;
 import ru.billing.stockList.FoodItem;
