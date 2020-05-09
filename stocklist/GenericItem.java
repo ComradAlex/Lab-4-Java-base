@@ -52,52 +52,5 @@ public class GenericItem {
         return analog;
     }
 
-    public void printAll(){
-        System.out.println(this.toString());
-    }
-
-    public void setAnalog(GenericItem analog) {
-        this.analog = analog;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        GenericItem genericItem = (GenericItem) o;
-        return  (id == genericItem.id && this.name.equals(genericItem.name) && Float.compare(this.price, genericItem.price)==0) && category == genericItem.getCategory();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, price);
-    }
-
-    @Override
-    public String toString() {
-        Integer analogID = null;
-        if (analog != null)
-            analogID = analog.getId();
-        return  this.getClass().getSimpleName()
-                + " | "
-                + "ID: " + this.id
-                + ", Name: " + this.name
-                + ", Price: " + this.price
-                + ", Category: " + this.category
-                + ", AnalogID: " + analogID;
-    }
-
-    public GenericItem clone() {
-        if (analog == null) {
-            return new GenericItem(this.id, this.name, this.price, this.category, null);
-        }
-        else
-            return new GenericItem(this.id, this.name, this.price, this.category, this.analog);
-    }
 
 }
