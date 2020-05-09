@@ -51,14 +51,5 @@ public class ItemCatalog {
         return null;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Catalog: \n");
-        for (GenericItem elem: arrListCatalog) {
-            sb.append(elem);
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
+    
 }
