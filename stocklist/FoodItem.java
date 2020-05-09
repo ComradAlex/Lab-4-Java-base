@@ -42,28 +42,5 @@ public class FoodItem extends GenericItem {
         this.expires = expires;
     }
 
-    @Override
-    public void printAll() {
-        System.out.println(this.toString());
-    }
 
-
-    public FoodItem clone() {
-        return new FoodItem(getName(), getPrice(), getAnalog(), getCategory(), new Date(getDateOfIncome().getTime()), getExpires());
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + ", Date: " + this.dateOfIncome + ", Expires: " + this.expires;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        FoodItem foodItem = (FoodItem)o;
-        return super.equals(o) && this.dateOfIncome.compareTo(foodItem.getDateOfIncome())==0 && (this.expires == foodItem.getExpires());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), dateOfIncome, expires);
-    }
+}
